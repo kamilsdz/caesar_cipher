@@ -2,11 +2,9 @@ class HomeController < ApplicationController
   def index
   end
 
-  def receive_post
-    request.body.read
-  end
-
   def result
-    @string = receive_post
+    @home = params[:home]
+    @post = @home[:string]
+    #binding.pry
   end
 end
